@@ -1,113 +1,237 @@
-import Image from 'next/image'
+import Image from "next/image";
+import React from "react";
 
-export default function Home() {
+const Button = (props) => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <a
+      className="rounded-3xl bg-[#ECF956] hover:bg-[#ccda36] border border-[#111] text-[#111] font-semibold text-xl px-7 py-2.5 whitespace-nowrap"
+      href="https://6inc.typeform.com/to/k06dpwLg"
+      target="_blank"
+    >
+      {props.children ? props.children : "GET STARTED"}
+    </a>
+  );
+};
+const Navbar = () => {
+  return (
+    <div className="flex items-center justify-center bg-[#F0EDEE] sticky top-0">
+      <div className="container flex justify-between  items-center py-5">
+        <Image src="/Logo.svg" alt="Treasure Logo" width={170} height={40} />
+        <Button />
       </div>
+    </div>
+  );
+};
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
+const Hero = () => {
+  return (
+    <div className="flex items-center justify-center bg-[#E8D5E8]">
+      <div className="container flex flex-col lg:flex-row lg:justify-between items-center gap-16 py-10">
+        <div className="max-w-[700px] flex flex-col items-center lg:items-start">
+          <h1 className="font-semibold text-5xl mb-6 text-center lg:text-left">
+            Empowering Influencers, Nurturing Success
+          </h1>
+          <p className="text-lg mb-6 text-center lg:text-left">
+            In the digital influence realm, the glamour masks a challenging
+            reality. Influencers face uncertainties, setbacks, and personal
+            struggles. Shockingly, 47% of 350 global influencers battle mental
+            health issues, revealing the hidden struggles behind their posts.
+            Less than 15% with under 100K followers monetize their passion,
+            leading to financial strain. Food bloggers, epitomes of culinary
+            creativity, suffer 70% faster health decline due to pressure and
+            demanding lifestyles.
+          </p>
+          <Button>Know More</Button>
+        </div>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/HeroImage.png"
+          alt=""
+          width={580}
+          height={730}
+          className="w-3/4 lg:w-full"
         />
       </div>
+    </div>
+  );
+};
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+const AtTreasure = () => {
+  return (
+    <div className="flex items-center justify-center bg-[#FFFDFC]">
+      <div className="container py-10">
+        <h1 className="text-4xl font-semibold mb-6 text-center lg:text-left">
+          At Treasure
+        </h1>
+        <p className="text-lg text-center lg:text-left">
+          We are on a mission to revolutionize the digital landscape for content
+          creators and influencers. We acknowledge your challenges, and we're
+          committed to standing by your side, guiding you towards not just
+          success but also happiness. We firmly believe that your well-being
+          matters just as much as your influence.
+        </p>
       </div>
-    </main>
-  )
-}
+    </div>
+  );
+};
+
+const WhyCard = (props) => {
+  return (
+    <div className="bg-[#FFFDFC] border border-[#D8D8D8] p-10 rounded-3xl flex flex-col lg:items-center">
+      <img src={`Why/${props.index}.svg`} alt="" className="h-[100px] mb-4" />
+      <h2 className="text-xl font-semibold mb-2.5 text-center lg:text-left">
+        {props.heading}
+      </h2>
+      <p className="text-[#6D6D6D] text-lg text-center lg:text-left">
+        {props.parah}
+      </p>
+    </div>
+  );
+};
+
+const WhyTreasure = () => {
+  return (
+    <div className="flex items-center justify-center bg-[#F0EDEC]">
+      <div className="container py-10">
+        <h1 className="text-4xl font-semibold mb-10 text-center lg:text-left">
+          Why Treasure?
+        </h1>
+        <div className="gap-x-12 gap-y-10 flex flex-col lg:flex-row">
+          <WhyCard
+            index={1}
+            heading="Financial Empowerment"
+            parah="We understand the importance of financial stability. Treasure provides you with the tools and strategies you need to monetize your influence effectively, ensuring that your passion becomes a sustainable career."
+          ></WhyCard>
+          <WhyCard
+            index={2}
+            heading="Personalized Guidance"
+            parah="Our team of experts is dedicated to helping you navigate the complex world of digital influence. We offer personalized guidance, mentorship, and workshops designed to enhance your skills and amplify your online presence."
+          ></WhyCard>
+          <WhyCard
+            index={3}
+            heading="Community & Connection"
+            parah="Being an influencer doesn't mean you have to walk this journey alone. Treasure connects you with like-minded individuals, fostering a supportive community where you can collaborate, learn, and grow together."
+          ></WhyCard>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Beginning = () => {
+  return (
+    <div className="flex items-center justify-center bg-[#F0EDEC]">
+      <div className="container py-10">
+        <h1 className="text-4xl font-semibold mb-6 text-center lg:text-left">
+          Let's Make a Beginning Together
+        </h1>
+        <p className="text-lg mb-10 text-center lg:text-left">
+          We invite you to join hands with us and curate an event in your town -
+          a stepping stone towards a brighter, more fulfilling future. We
+          provide you with the expertise, tools, and knowledge you need to
+          become the face of influence in your community. Together, we can
+          create a positive impact, not just online but also in the lives of
+          those around us.
+        </p>
+        <div className="flex items-center flex-col lg:flex-row gap-10 w-full">
+          <div className="basis-full">
+            <img src="/Begining/1.png"></img>
+          </div>
+          <div className="basis-full">
+            <img src="/Begining/2.png"></img>
+          </div>
+          <div className="basis-[60%]">
+            <img src="/Begining/3.png"></img>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CTA = () => {
+  return (
+    <div className="flex items-center justify-center bg-[#F0EDEC]">
+      <div className="container py-10">
+        <div className="flex bg-[#E8D5E8] rounded lg:px-20 p-16 items-center justify-between flex-col lg:flex-row gap-10">
+          <h1 className="text-4xl font-semibold max-w-[650px] text-center lg:text-left">
+            Fill out the form, and let's embark on this empowering journey
+            together.
+          </h1>
+          <Button>Fill Form Here</Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Ready = () => {
+  return (
+    <div className="flex items-center justify-center bg-[#F0EDEC]">
+      <div className="container py-10 gap-10 justify-between items-center flex flex-col lg:flex-row">
+        <div className="max-w-[650px]">
+          <h2 className="text-5xl font-semibold mb-10  text-center lg:text-left">
+            Are You Ready to Transform Your Journey?
+          </h2>
+          <p className="text-xl  text-center lg:text-left">
+            If you're passionate about making a change, if you're ready to
+            transform your challenges into opportunities
+          </p>
+        </div>
+        <img src="/TranformImage.png" alt="" className="h-80" />
+      </div>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <div className="flex flex-col items-center justify-center bg-[#F0EDEC]">
+      <div className="container py-10">
+        <Image
+          src="/Logo.svg"
+          alt="Treasure Logo"
+          width={170}
+          height={40}
+          className="mb-5"
+        />
+        <p className="max-w-[400px]">
+          End to end web 3 digital stack for content creators & influencers
+        </p>
+      </div>
+      <div className="container py-5 border-[#CACACA] border-t flex justify-between">
+        <p className="text-[#444] font-medium">© 2023 All Rights Reserved. </p>
+        <div className="flex gap-7">
+          <p>Social Media The Influencers</p>
+          <div className="flex gap-2.5">
+            <a>
+              <Image src="/Social/Facebook.svg" width={24} height={24} />
+            </a>
+            <a>
+              <Image src="/Social/Twitter.svg" width={24} height={24} />
+            </a>
+            <a>
+              <Image src="/Social/Instagram.svg" width={24} height={24} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const page = () => {
+  return (
+    <div>
+      <Navbar />
+      <Hero />
+      <AtTreasure />
+      <WhyTreasure />
+      <Beginning />
+      <Ready />
+      <CTA />
+      <Footer />
+    </div>
+  );
+};
+
+export default page;
